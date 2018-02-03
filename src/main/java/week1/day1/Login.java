@@ -1,10 +1,15 @@
 package week1.day1;
 
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
 
 public class Login {
 
-	public static void main(String[] args) throws InterruptedException {
+
+	//@Test(invocationCount=2,threadPoolSize=2,invocationTimeOut=9000)
+	@Test(invocationCount=10,successPercentage=70)
+	public void login() throws InterruptedException {
 		// init driver
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 		//launch browser
@@ -17,8 +22,21 @@ public class Login {
 		driver.findElementById("username").clear();
 		driver.findElementById("username").sendKeys("DemoSalesManager");
 		driver.findElementById("password").sendKeys("crmsfa");
-		driver.findElementByClassName("decorativeSubmit").click();
-		Thread.sleep(5000);
+		WebElement select = driver.findElementByClassName("decorativeSubmit");
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		driver.findElementByClassName("decorativeSubmit").click();
 		driver.close();
 		
